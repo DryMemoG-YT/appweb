@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Tutorial Flask: Página de Biblioteca</title>
-</head>
-<body>
-    <h1><center>Página Principal</center></h1>
-    {{ num_prestamos }} prestamos
-</body>
-</html>
+{% extends "base_template.html" %}
+{% block title %}Tutorial Flask: PAgina Biblioteca{% endblock %}
+{% block content %}
+    {{ num_prestamos }} prestamos Xd
+{% endblock %}
