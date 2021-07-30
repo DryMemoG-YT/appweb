@@ -15,3 +15,7 @@ def show_prestamo(slug):
 @app.route("/admin/prestamo/<int:idPrestamo>")
 def prestamo_form(idPrestamo=None):
     return render_template("admin/prestamo_form.html", idPrestamo=idPrestamo )
+
+@app.route("/admin/addautor")
+def add_autor():
+    return render_template("admin/addautor.html")

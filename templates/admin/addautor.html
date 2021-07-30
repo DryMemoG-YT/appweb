@@ -1,0 +1,17 @@
+{% extends "base_template.html" %}
+{% block title %}Registro de Autores{% endblock %}
+{% block content %}
+    <form action="" method="post">
+        <label for="name">Nombres: </label>
+        <input type="text" id="name" name="name" /><br>
+        <label for="apellidos">Apellidos: </label>
+        <input type="text" id="apellidos" name="apellidos" /><br>
+        <label for="fechanac">Fecha de Nacimiento</label>
+        <input type="date" id="fechanac" name="fechanac" /><br>
+        <label for="fecham">Fecha de Muerte</label>
+        <input type="date" id="fecham" name="fecham" /><br>
+        <label for="nac">Nacionalidad: </label>
+        <input type="text" id="nac" name="nac" /><br>
+        <input type="submit" id="send-guardar" name="guardar" value="Guardar" />
+    </form>
+{% endblock %}
