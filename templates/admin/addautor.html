@@ -1,17 +1,40 @@
 {% extends "base_template.html" %}
 {% block title %}Registro de Autores{% endblock %}
 {% block content %}
-    <form action="" method="post">
-        <label for="name">Nombres: </label>
-        <input type="text" id="name" name="name" /><br>
-        <label for="apellidos">Apellidos: </label>
-        <input type="text" id="apellidos" name="apellidos" /><br>
-        <label for="fechanac">Fecha de Nacimiento</label>
-        <input type="date" id="fechanac" name="fechanac" /><br>
-        <label for="fecham">Fecha de Muerte</label>
-        <input type="date" id="fecham" name="fecham" /><br>
-        <label for="nac">Nacionalidad: </label>
-        <input type="text" id="nac" name="nac" /><br>
-        <input type="submit" id="send-guardar" name="guardar" value="Guardar" />
+<!-- FIXME: Agregar un DIV para que se vea bonito -->
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.name.label }}
+            {{ form.name(size=100) }}<br>
+            {% for error in form.name.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.apellidos.label }}
+            {{form.apellidos(size=100) }}<br>
+            {% for error in form.apellidos.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.fechanac.label }}
+            {{ form.fechanac }}<br>
+            {% for error in form.fechanac.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.nac.label }}
+            {{form.nac(size=40) }}<br>
+            {% for error in form.nac.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+        
     </form>
 {% endblock %}
